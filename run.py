@@ -6,8 +6,8 @@ from email.mime.text import MIMEText
 
 def email(success, input_file, output_file, error_type=None):
     # Email configurations
-    sender_email = "felicia.schenkelberg.th@dartmouth.edu"
-    receiver_email = "felicia.schenkelberg.th@dartmouth.edu"
+    sender_email = "chengrui.ma.27@dartmouth.edu"
+    receiver_email = "chengrui.ma.27@dartmouth.edu"
 
     # Create a multipart message
     msg = MIMEMultipart()
@@ -56,7 +56,7 @@ def run_scripts_in_directory(directory):
             email(success=False, input_file=script, output_file=script_path, error_type=str(e))
 
 # Specify the directory containing the scripts
-directory_path = "/scratch/f006dg0/mcas-gmra/experiments/Link_prediction"
+directory_path = "/scratch/f0071gk/mcas-gmra/experiments/Link_prediction"
 
 # Call the function to run the scripts in the directory
 run_scripts_in_directory(directory_path)

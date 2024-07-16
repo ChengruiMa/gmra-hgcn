@@ -1,5 +1,5 @@
 Metadata-Version: 2.1
-Name: mcas-gmra
+Name: mcas_gmra
 Version: 0.0.1
 Summary: Adaptation of GMRA (https://mauromaggioni.duckdns.org/code/) to Python in C++ using MCAS, pybind11, CMake, and libtorch
 Author: Andrew Wood

@@ -206,6 +206,8 @@ class WaveletNode(object):
                 # if len(c.idxs) ==1 or c.basis.shape[0] == 1:
                 #     continue
                 if np.prod(c.basis.shape) > 1:
+                    print("c.basis shape:", c.basis.shape)
+                    print("parent_basis shape:", parent_basis.shape)
                     Y: np.ndarray = c.basis-(c.basis.dot(parent_basis.T)).dot(parent_basis)
                     _, s, V = rand_pca(Y, min(min(X.shape), max_dim), inverse = True)
                     wav_dims[i] = (s > threshold).sum(dtype=np.int8)
@@ -308,6 +310,8 @@ class WaveletTree(object):
 
         for j in range(self.num_levels-1, 0, -1):
             # built transforms
+            print("manifold_dims[j]:", self.manifold_dims[j])
+            print("max_dim:", self.max_dim)
             nodes = nodes_at_layers[j]
             # print("layer %s" % j)
             for node in nodes:

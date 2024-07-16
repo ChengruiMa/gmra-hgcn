@@ -23,7 +23,7 @@ from pysrc.trees.wavelettree import WaveletTree
 # Simple Sphere Shape
 def sphere():
     # Load points from 'sphere.txt'
-    return np.loadtxt('./sphere/sphere.txt', delimiter=',')
+    return np.loadtxt('../../sphere/sphere.txt', delimiter=',')
 
 # The low-dimensional features for each point at an arbitrary scale (i.e. 0) are stored inside the wavelet nodes themselves. 
 # When you want to extract the features for points in the dataset at a known scale, you need to traverse the tree to the 

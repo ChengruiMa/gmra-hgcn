@@ -61,7 +61,7 @@ graphsage = GraphSAGE(
 x_inp, x_out = graphsage.in_out_tensors()
 
 # Trained node pair classifier
-model_path = "/scratch/f006dg0/mcas-gmra/GraphSAGE.h5"
+model_path = "/scratch/f0071gk/mcas-gmra/GraphSAGE.h5"
 model = keras.models.load_model(model_path)
 
 # Extracting node embeddings

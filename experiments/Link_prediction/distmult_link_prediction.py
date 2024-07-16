@@ -73,7 +73,7 @@ The dataset comes with a defined train, test and validation split, each consisti
 """
 
 wn18 = datasets.WN18()
-display(HTML(wn18.description))
+print(wn18.description)
 wn18_graph, wn18_train, wn18_test, wn18_valid = wn18.load()
 
 print(wn18_graph.info())
@@ -158,7 +158,7 @@ Now that we know the process, we can apply the model on the FB15k dataset in the
 """
 
 fb15k = datasets.FB15k()
-display(HTML(fb15k.description))
+print(fb15k.description)
 fb15k_graph, fb15k_train, fb15k_test, fb15k_valid = fb15k.load()
 
 print(fb15k_graph.info())

@@ -28,7 +28,7 @@ from pysrc.utils.inverse import *
 # Simple Line Shape
 def line():
     # Load points from 'line.txt'
-    return np.loadtxt('./line/line.txt', delimiter=',')
+    return np.loadtxt('../line.txt', delimiter=',')
 
 def main() -> None:
     init_time = time.time()
@@ -64,6 +64,7 @@ def main() -> None:
 
     print("constructing wavelet tree")
     start_time = time.time()
+    print("X shape:", X.shape)
     wavelet_tree = WaveletTree(dyadic_tree, X, 0, X.shape[-1])
     end_time = time.time()
     print("done. took {0:.4f} seconds".format(end_time-start_time))

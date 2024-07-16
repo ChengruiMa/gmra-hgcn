@@ -69,7 +69,7 @@ The Blog Catalog 3 dataset is a heterogeneous network with two different node ty
 """
 
 dataset = datasets.BlogCatalog3()
-display(HTML(dataset.description))
+print(dataset.description)
 graph = dataset.load()
 
 print(graph.info())
@@ -203,12 +203,12 @@ def metapath2vec_embedding(graph, name):
 
     model = Word2Vec(
         walks,
-        size=dimensions,
+        vector_size=dimensions,
         window=context_window_size,
         min_count=0,
         sg=1,
         workers=workers,
-        iter=num_iter,
+        epochs=num_iter,
     )
 
     def get_embedding(u):

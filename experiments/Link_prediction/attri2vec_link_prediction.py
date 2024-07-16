@@ -79,7 +79,7 @@ Download and unzip the `dblp-subgraph.zip` file to a location on your computer a
 point to the location of the dataset (the `DBLP` directory containing `content.txt` and `edgeList.txt`).
 """
 
-data_dir = "~/data/DBLP"
+data_dir = "/scratch/f0071gk/mcas-gmra/data/DBLP"
 
 """Load the graph from the edge list."""
 
@@ -252,9 +252,11 @@ for ii in range(len(edgelist)):
     target_year = int(node_data["year"][target_index])
     if source_year < year_thresh and target_year < year_thresh:
         in_sample_edges.append([source_index, target_index, 1])  # get the positive edge
-        negative_target_index = unsupervised_samples.random.choices(
-            node_data.index.tolist(), k=1
-        )  # generate negative node
+        negative_target_index = unsupervised_samples.np_random.choice(
+            node_data.index.tolist(), 
+            size=1, 
+            replace=False
+        )
         in_sample_edges.append(
             [source_index, negative_target_index[0], 0]
         )  # get the negative edge
@@ -262,9 +264,11 @@ for ii in range(len(edgelist)):
         out_of_sample_edges.append(
             [source_index, target_index, 1]
         )  # get the positive edge
-        negative_target_index = unsupervised_samples.random.choices(
-            node_data.index.tolist(), k=1
-        )  # generate negative node
+        negative_target_index = unsupervised_samples.np_random.choice(
+            node_data.index.tolist(), 
+            size=1, 
+            replace=False
+        )
         out_of_sample_edges.append(
             [source_index, negative_target_index[0], 0]
         )  # get the negative edge

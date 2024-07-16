@@ -66,7 +66,7 @@ The Cora dataset is a homogeneous network where all nodes are papers and edges b
 """
 
 dataset = datasets.Cora()
-display(HTML(dataset.description))
+print(dataset.description)
 graph, _ = dataset.load(largest_connected_component_only=True, str_node_ids=True)
 
 print(graph.info())
@@ -190,12 +190,12 @@ def node2vec_embedding(graph, name):
 
     model = Word2Vec(
         walks,
-        size=dimensions,
+        vector_size=dimensions,
         window=window_size,
         min_count=0,
         sg=1,
         workers=workers,
-        iter=num_iter,
+        epochs=num_iter,
     )
 
     def get_embedding(u):

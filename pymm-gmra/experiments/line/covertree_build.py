@@ -18,7 +18,7 @@ from mcas_gmra import CoverTree
 # Simple Line Shape
 def line():
     # Load points from 'line.txt'
-    return np.loadtxt('./line/line.txt', delimiter=',')
+    return np.loadtxt('./line.txt', delimiter=',')
 
 def main() -> None:
     parser = argparse.ArgumentParser()

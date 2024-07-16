@@ -52,7 +52,7 @@ The dataset used in this demo is called `enron-ia-employees`, available in Netwo
 """
 
 dataset = IAEnronEmployees()
-display(HTML(dataset.description))
+print(dataset.description)
 
 full_graph, edges = dataset.load()
 
@@ -187,21 +187,21 @@ from gensim.models import Word2Vec
 embedding_size = 128
 temporal_model = Word2Vec(
     temporal_walks,
-    size=embedding_size,
+    vector_size=embedding_size,
     window=context_window_size,
     min_count=0,
     sg=1,
     workers=2,
-    iter=1,
+    epochs=1,
 )
 static_model = Word2Vec(
     static_walks,
-    size=embedding_size,
+    vector_size=embedding_size,
     window=context_window_size,
     min_count=0,
     sg=1,
     workers=2,
-    iter=1,
+    epochs=1,
 )
 
 """For convenience, we can use the trained Word2Vec models to define helper functions that transform a node ID into a node embedding.
@@ -229,6 +229,7 @@ For visualisation of embeddings, we'll first define a helper function that we ca
 
 def plot_tsne(title, x, y=None):
     tsne = TSNE(n_components=2)
+    x = np.array(x)
     x_t = tsne.fit_transform(x)
 
     plt.figure(figsize=(7, 7))
