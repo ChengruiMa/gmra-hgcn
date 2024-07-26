@@ -23,7 +23,7 @@ from pysrc.trees.wavelettree import WaveletTree
 # Simple Helix Shape
 def helix():
     # Load points from 'helix.txt'
-    return np.loadtxt('./helix/helix.txt', delimiter=',')
+    return np.loadtxt('../helix.txt', delimiter=',')
 
 # The low-dimensional features for each point at an arbitrary scale (i.e. 0) are stored inside the wavelet nodes themselves. 
 # When you want to extract the features for points in the dataset at a known scale, you need to traverse the tree to the 

@@ -53,7 +53,7 @@ def run_scripts_in_directory(directory):
             email(success=False, input_file=script, output_file=script_path, error_type=str(e))
 
 # Specify the directory containing the scripts
-directory_path = "/scratch/f0071gk/mcas-gmra/pymm-gmra/experiments/stellargraph_ecai_demos/Link_Prediction"
+directory_path = "/scratch/f0071gk/mcas-gmra/pymm-gmra/experiments/stellargraph_ecai_demos/Link_Prediction/Euclidean_trainings"
 
 # Run scripts directly in the specified directory
 run_scripts_in_directory(directory_path)

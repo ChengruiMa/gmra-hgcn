@@ -18,7 +18,7 @@ from mcas_gmra import CoverTree
 # Simple Helix Shape
 def helix():
     # Load points from 'helix.txt'
-    return np.loadtxt('./helix/helix.txt', delimiter=',')
+    return np.loadtxt('helix.txt', delimiter=',')
 
 def main() -> None:
     parser = argparse.ArgumentParser()
